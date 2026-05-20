@@ -149,7 +149,9 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.HUMPER, function (sprite, otherS
     statusbar2.value += -2
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile9`, function (sprite, location) {
-	
+    game.splash("You Have Found The Secret Key!")
+    game.splash("You Can Now Teleport to the next Level!")
+    tiles.setCurrentTilemap(tilemap`level6`)
 })
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.doorClosedNorth, function (sprite, location) {
     game.splash("Final Level , BOSS FIGHT")
@@ -378,7 +380,7 @@ statusbars.onZero(StatusBarKind.HUMPERHEALLTH, function (status) {
     sprites.destroy(FAHAHAHAHAH)
 })
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.stairEast, function (sprite, location) {
-    tiles.setCurrentTilemap(tilemap`heheittrree`)
+    tiles.setCurrentTilemap(tilemap`heheittrreevfcf`)
     effects.confetti.startScreenEffect(1000)
     game.splash("You Beat Sea 1! Get ready for some real fun now 😈..")
     mySprite = sprites.create(img`
@@ -472,6 +474,9 @@ sprites.onDestroyed(SpriteKind.Enemy, function (sprite3) {
         `, SpriteKind.ExtraLife)
     tiles.placeOnRandomTile(Extralifesprite, assets.tile`myTile`)
     Extralifesprite.follow(herosprite, 50)
+})
+scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile10`, function (sprite, location) {
+    game.splash("You Found A Key!")
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.EnemyAfterTwo, function (sprite, otherSprite) {
     statusbar2.value += -2
