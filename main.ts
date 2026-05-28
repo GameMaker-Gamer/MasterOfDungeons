@@ -502,6 +502,10 @@ sprites.onDestroyed(SpriteKind.EnemyAfterTwo, function (sprite) {
         `, SpriteKind.extralifethree)
     Extralifethreesprite.follow(herosprite, 50)
 })
+scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.greenOuterWest2, function (sprite, location) {
+    game.splash("Good Job! You Escaped from prison!")
+    tiles.setCurrentTilemap(tilemap`level11`)
+})
 sprites.onOverlap(SpriteKind.Chaser, SpriteKind.Player, function (sprite, otherSprite) {
     statusbar2.value += -2
 })
