@@ -505,6 +505,7 @@ sprites.onDestroyed(SpriteKind.EnemyAfterTwo, function (sprite) {
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.greenOuterWest2, function (sprite, location) {
     game.splash("Good Job! You Escaped from prison!")
     tiles.setCurrentTilemap(tilemap`level11`)
+    game.splash("Now You Can Enjoy!")
 })
 sprites.onOverlap(SpriteKind.Chaser, SpriteKind.Player, function (sprite, otherSprite) {
     statusbar2.value += -2
