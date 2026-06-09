@@ -15,7 +15,7 @@ namespace StatusBarKind {
     export const HUMPERHEALLTH = StatusBarKind.create()
 }
 sprites.onDestroyed(SpriteKind.HUMPER, function (sprite) {
-    fullhealth = sprites.create(img`
+    fullhealth2 = sprites.create(img`
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . 2 2 2 . . 
@@ -33,7 +33,7 @@ sprites.onDestroyed(SpriteKind.HUMPER, function (sprite) {
         . . . . . . . 2 2 2 3 3 2 2 . . 
         . . . . . . . . 2 3 3 2 2 . . . 
         `, SpriteKind.fullhealth)
-    fullhealth.follow(herosprite)
+    fullhealth2.follow(herosprite)
 })
 controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
     if (herosprite.isHittingTile(CollisionDirection.Bottom)) {
@@ -121,11 +121,6 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.greenSwitchUp, function (
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.HUMPER, function (sprite, otherSprite) {
     statusbar2.value += -2
-})
-scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile9`, function (sprite, location) {
-    game.splash("You Have Found The Secret Key!")
-    game.splash("You Can Now Teleport to the next Level!")
-    tiles.setCurrentTilemap(tilemap`level6`)
 })
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.doorClosedNorth, function (sprite, location) {
     game.splash("Final Level , BOSS FIGHT")
@@ -501,7 +496,7 @@ let enemytwo2: Sprite = null
 let Extralifesprite: Sprite = null
 let chasersprite: Sprite = null
 let jump = false
-let fullhealth: Sprite = null
+let fullhealth2: Sprite = null
 let statusbar2: StatusBarSprite = null
 let enemysprite: Sprite = null
 let herosprite: Sprite = null
