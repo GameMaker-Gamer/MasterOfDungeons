@@ -122,6 +122,10 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.greenSwitchUp, function (
 sprites.onOverlap(SpriteKind.Player, SpriteKind.HUMPER, function (sprite, otherSprite) {
     statusbar2.value += -2
 })
+scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile9`, function (sprite, location) {
+    game.splash("Good Job You Found The Secret Key!")
+    game.splash("You can now teleport to the next level!")
+})
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.doorClosedNorth, function (sprite, location) {
     game.splash("Final Level , BOSS FIGHT")
     tiles.setCurrentTilemap(tilemap`level8`)
